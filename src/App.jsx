@@ -23,6 +23,7 @@ function App() {
                         </div>
                         <h2><span>Title: </span>{post.title}</h2>
                         <h2><span>Description: </span>{post.description}</h2>
+                        <h1>Kipsate</h1>
                     </>
                 )
             })}
