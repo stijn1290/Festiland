@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import {useEffect, useState} from "react";
+import { collection, getDocs } from "firebase/firestore";
+import {db} from './config/firebase.js';
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    const [getPostList, setPostList] = useState([]);
+    useEffect(() => {
+        const getPosts = async () => {
+            const data = await getDocs(collection(db, "posts"));
+            setPostList(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
+        }
+        getPosts();
+    }, []);
+    return (
+        <>
+            <h2>Posts</h2>
+            {getPostList.map(post =>{
+                return(
+                    <>
+                        <div>
+                            <h2>{post.festival}  {post.user}</h2>
+                        </div>
+                        <h2><span>Title: </span>{post.title}</h2>
+                        <h2><span>Description: </span>{post.description}</h2>
+                    </>
+                )
+            })}
+        </>
+    )
 }
 
 export default App
