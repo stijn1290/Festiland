@@ -15,6 +15,9 @@ function App() {
             <main className="layout">
               <Index></Index>
             </main>
+                    </>
+                )
+            })}
         </>
     );
 }
