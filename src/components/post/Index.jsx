@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {collection, getDocs} from "firebase/firestore";
 import {db} from '../../config/firebase.js';
 
-function App() {
+function Index() {
     const [getPostList, setPostList] = useState([]);
 
     useEffect(() => {
@@ -25,4 +25,4 @@ function App() {
         </>);
 }
 
-export default App;
+export default Index;
