@@ -1,5 +1,6 @@
 import './App.css';
 import Index from "./components/post/Index.jsx";
+import Create from "./components/post/Create.jsx";
 
 function App() {
 
@@ -7,17 +8,15 @@ function App() {
         <>
             <header>
                 <a href="/">
-                    <img src="/logo.png" alt="Festiland Logo" className="imgSize" />
+                    <img src="/logo.png" alt="Festiland Logo" className="imgSize"/>
                 </a>
                 <h2>Posts</h2>
             </header>
 
             <main className="layout">
-              <Index></Index>
+                <Index></Index>
+                <Create></Create>
             </main>
-                    </>
-                )
-            })}
         </>
     );
 }
