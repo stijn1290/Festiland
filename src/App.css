@@ -56,3 +56,73 @@ header {
   padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
 }
+.formBlock {
+  background-color: #ffffff;
+  color: #000;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formBlock h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.formRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formRow label {
+  font-weight: 500;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Chrome autofill fix */
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: black !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.inputBar {
+  border-radius: 8px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #000;
+  transition: border-color 0.3s;
+}
+
+.inputBar:focus {
+  border-color: var(--purple);
+  outline: none;
+}
+.submitBar {
+  border-radius: 8px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  background-color: purple;
+  color: white;
+  transition: border-color 0.3s;
+  cursor: pointer;
+}

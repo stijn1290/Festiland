@@ -1,6 +1,6 @@
 import './App.css';
 import Index from "./components/post/Index.jsx";
-
+import Create from "./components/user/create.jsx";
 function App() {
 
     return (
@@ -13,12 +13,14 @@ function App() {
             </header>
 
             <main className="layout">
-              <Index></Index>
+              <Index>
+              </Index>
+
             </main>
-                    </>
-                )
-            })}
+            <Create></Create>
+
         </>
+
     );
 }
 

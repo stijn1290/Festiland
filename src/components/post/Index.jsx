@@ -13,20 +13,16 @@ function App() {
         getPosts();
     }, []);
 
-    return (
-        <>
-            {getPostList.map(post => (
-                <div className="block" key={post.id}>
+    return (<>
+            {getPostList.map(post => (<div className="block" key={post.id}>
                     <div className="firstRow">
                         <h2>{post.Festival}</h2>
                         <h2>{post.User}</h2>
                     </div>
                     <h2><span>Title: </span>{post.title}</h2>
                     <h2><span>Description: </span>{post.description}</h2>
-                </div>
-            ))}
-        </>
-    );
+                </div>))}
+        </>);
 }
 
 export default App;
