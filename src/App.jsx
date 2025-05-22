@@ -1,7 +1,7 @@
 import './App.css';
 import Index from "./components/post/Index.jsx";
 import Create from "./components/post/Create.jsx";
-
+import CreateUser from "./components/user/create.jsx";
 function App() {
 
     return (
@@ -16,8 +16,10 @@ function App() {
             <main className="layout">
                 <Index></Index>
                 <Create></Create>
+                <CreateUser></Create>
             </main>
         </>
+
     );
 }
 
