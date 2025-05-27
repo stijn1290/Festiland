@@ -68,6 +68,19 @@ header {
   flex-direction: column;
   gap: 1rem;
 }
+.header-text {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.header-text:hover {
+  text-decoration: underline;
+}
+
+nav {
+  margin-top: 10px;
+}
 
 .formBlock h2 {
   font-size: 1.25rem;
