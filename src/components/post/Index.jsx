@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { db } from '../../config/firebase.js';
+import { useAuth } from './AuthContext.jsx';
+import { useNavigate } from 'react-router-dom'; // ✅ IMPORT THIS
 
 function Index() {
     const [getPostList, setPostList] = useState([]);
+    const { user } = useAuth();
+    const navigate = useNavigate(); // ✅ INITIALIZE
 
     useEffect(() => {
         const getPosts = async () => {
@@ -13,17 +17,26 @@ function Index() {
         getPosts();
     }, []);
 
-    // Render star rating visually (no logic, just 3/5 for now)
-    const renderStars = (count = 3) => {
-        const stars = [];
-        for (let i = 1; i <= 5; i++) {
-            stars.push(
-                <span key={i} style={{ color: i <= count ? 'gold' : '#ccc', fontSize: '1.2rem' }}>
-                    ★
-                </span>
+    const deletePost = async (id) => {
+        const postDoc = doc(db, "posts", id);
+        await deleteDoc(postDoc);
+        setPostList((prevPosts) => prevPosts.filter((post) => post.id !== id));
+    };
+
+    const updatePost = async (id, updatedData) => {
+        const postDoc = doc(db, "posts", id);
+        try {
+            await updateDoc(postDoc, updatedData);
+            setPostList((prev) =>
+                prev.map((post) =>
+                    post.id === id ? { ...post, ...updatedData } : post
+                )
             );
+            alert("Post updated successfully!");
+        } catch (error) {
+            console.error("Error updating post:", error);
+            alert("Failed to update post.");
         }
-        return stars;
     };
 
     return (
@@ -32,13 +45,17 @@ function Index() {
                 <div className="block" key={post.id}>
                     <div className="firstRow">
                         <h2>{post.Festival}</h2>
-                        <h2>{post.User}</h2>
+                        {!post.User?.private && <h2>{post.User?.name}</h2>}
                     </div>
                     <h2><span>Title: </span>{post.title}</h2>
                     <h2><span>Description: </span>{post.description}</h2>
-                    <div className="starRating">
-                        {renderStars(3)} {/* 👈 show 3 stars filled */}
-                    </div>
+
+                    {user && (
+                        <>
+                            <button onClick={() => deletePost(post.id)}>Delete</button>
+                            <button onClick={() => navigate(`/edit/${post.id}`)}>Edit</button>
+                        </>
+                    )}
                 </div>
             ))}
         </>

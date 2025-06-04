@@ -4,7 +4,7 @@ import Index from "./components/post/Index.jsx";
 import Create from "./components/post/Create.jsx";
 import CreateUser from "./components/user/create.jsx";
 import Login from "./components/user/login.jsx";
-
+import EditPost from "./components/post/EditPost.jsx";
 function App() {
     return (
         <Router>
@@ -28,6 +28,7 @@ function App() {
                     <Route path="/maakpost" element={<Create />} />
                     <Route path="/Registreren" element={<CreateUser />} />
                     <Route path="/Inloggen" element={<Login />} />
+                    <Route path="/edit/:id" element={<EditPost />} />
                 </Routes>
             </main>
         </Router>

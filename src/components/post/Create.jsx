@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../config/firebase.js";
-import { useAuth } from './AuthContext.jsx'; // 👈 Import auth
+import { useAuth } from './AuthContext.jsx';
 
 function Create() {
     const [getFestival, setFestival] = useState("");
@@ -33,7 +33,7 @@ function Create() {
         <form className="formBlock" onSubmit={createPost}>
             <h2>New Post</h2>
             <div className="formRow">
-                <label htmlFor="title">Title:</label>
+                <label htmlFor="title">Titel:</label>
                 <input
                     type="text"
                     id="title"
