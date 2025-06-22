@@ -1,5 +1,6 @@
 import React from 'react'
 import AddDoc from './create'
+import '../../App.css';
 
 describe('<AddDoc />', () => {
   it('renders', () => {

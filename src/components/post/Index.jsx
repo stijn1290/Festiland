@@ -51,10 +51,10 @@ function Index() {
           const postForFestival = filteredPosts.find(p => p.Festival === festival);
 
           return (
-            <div className="block" key={festival}>
+            <div className="block" key={festival} id={festival}>
               <div className="firstRow" style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <h2>
-                  <Link to={`/${festival}/posts`}>{festival}</Link>
+                  <Link to={`/${festival}/posts`} id="clickFestival">{festival}</Link>
                 </h2>
               </div>
               <h2>Klik op de titel om te navigeren</h2>

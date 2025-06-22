@@ -110,6 +110,7 @@ const Login = () => {
             Email Address
             <input
               type="email"
+              id="emailLogin"
               name="EmailAdress"
               value={formData.EmailAdress}
               onChange={handleChange}
@@ -122,6 +123,7 @@ const Login = () => {
             Password
             <input
               type="password"
+              id="passwordLogin"
               name="Password"
               value={formData.Password}
               onChange={handleChange}
@@ -129,7 +131,7 @@ const Login = () => {
             />
           </label>
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" id="submitLogin">Login</button>
       </form>
       <hr />
       <button onClick={handleGoogleLogin}>Login with Google</button>

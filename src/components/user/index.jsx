@@ -87,6 +87,7 @@ function Index() {
     <>
       <input
         type="text"
+        id="userSearch"
         placeholder="Search user"
         value={input}
         onChange={(e) => setInput(e.target.value)}

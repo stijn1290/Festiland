@@ -68,6 +68,7 @@ function Show(props) {
         {[1, 2, 3, 4, 5].map((star) => (
           <span
             key={star}
+            id={`star-${star}`}
             onClick={() => handleStarClick(post.id, star)}
             style={{
               cursor: "pointer",
@@ -170,7 +171,7 @@ function Show(props) {
         const blocked = isPostFromBlockedUser(post.user?.Name);
 
         return (
-          <div className="block" key={post.id}>
+          <div className="block" key={post.id} id={`post-${post.title}`} >
             <div className="firstRow" style={{ justifyContent: "space-between" }}>
               <h2>{post.Festival}</h2>
               {user && (

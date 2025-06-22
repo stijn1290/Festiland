@@ -66,6 +66,7 @@ export default function Dashboard() {
             <input
               type="email"
               name="EmailAdress"
+              id="emailAdjust"
               value={formData.EmailAdress}
               onChange={handleChange}
               required
@@ -80,6 +81,7 @@ export default function Dashboard() {
             <input
               type="text"
               name="Name"
+              id="nameAdjust"
               value={formData.Name}
               onChange={handleChange}
               required
@@ -93,6 +95,7 @@ export default function Dashboard() {
             <input
               type="text"
               name="Password"
+              id="passwordAdjust"
               value={formData.Password}
               onChange={handleChange}
               required
@@ -106,6 +109,7 @@ export default function Dashboard() {
             Private:
             <input
               type="checkbox"
+              id="privacyAdjust"
               name="private"
               checked={formData.private}
               onChange={handleChange}

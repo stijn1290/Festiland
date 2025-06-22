@@ -41,6 +41,7 @@ const AddDoc = () => {
                             <input
                                 type="email"
                                 name="EmailAdress"
+                                id="email"
                                 value={formData.EmailAdress}
                                 onChange={handleChange}
                                 required
@@ -52,6 +53,7 @@ const AddDoc = () => {
                             Name
                             <input
                                 type="text"
+                                id="name"
                                 name="Name"
                                 value={formData.Name}
                                 onChange={handleChange}
@@ -65,6 +67,7 @@ const AddDoc = () => {
                             Password
                             <input
                                 type="password"
+                                id="password"
                                 name="Password"
                                 value={formData.Password}
                                 onChange={handleChange}
@@ -77,6 +80,7 @@ const AddDoc = () => {
                         <label className="inputBar">
                             <input
                                 type="checkbox"
+                                id="privacy"
                                 name="private"
                                 checked={formData.private}
                                 onChange={handleChange}
@@ -86,7 +90,7 @@ const AddDoc = () => {
                     </div>
 
 
-                    <button type="submit">Continue</button>
+                    <button type="submit" id="submit">Continue</button>
                 </form>
             </div>
 

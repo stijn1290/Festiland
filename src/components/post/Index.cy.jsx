@@ -1,5 +1,6 @@
 import React from 'react'
 import Index from './Index'
+import '../../App.css';
 import {MockAuthProvider} from '../../../cypress/support/mocks/MockAuthProvider';
 import {MockRouterProvider} from '../../../cypress/support/mocks/MockRouterProvider';
 
